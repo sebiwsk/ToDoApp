@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <link rel="icon" type="image/icon.png" href="icon.png">
+    <link rel="stylesheet" href="stylesheet.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ToDos</title>
+</head>
+<body>
+<div class="wrapper" id="wrapper">
+    <div class="header">
+        <table>
+            <tr>
+                <td>
+                    <button class="open-btn" onclick="zustand()">☰</button>
+                </td>
+                <td>
+                    <a href="index.html" class="home"><h1>&nbsp&nbsp&nbsp ToDos</h1></a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="main-container">
+        <div id="mySidebar" class="sidebar">
+            <a href="javascript:void(0)" class="close-btn" onclick="closeNav()">×</a>
+            <button id="showDialog" class="button"> ToDo erstellen</button>
+            <!-- Trigger/Open The Modal -->
+            <dialog id="favDialog">
+                <h2 class="form">Neues TODO erstellen</h2>
+                <form id="form" method="POST" action="">
+                    <fieldset id="sidebar">
+                        <p><label for="eingabetodo">Namen</label><input type="text" placeholder="Geben Sie ein ToDo ein..." size="40" class="eingabetodo" name="eingabetodo" id="eingabetodo"></p>
+                        <p><label for="description">Namen</label><input type="text" size="40" class="description" name="description" id="description"></p>
+                        <p>
+                            <label for="prio">
+                                Wie hoch ist die Priorität:
+                            </label>
+                            <select name="prio" id="prio">
+                                <option value="1">Niedrig</option>
+                                <option value="2">Mittel</option>
+                                <option value="3">Hoch</option>
+                            </select>
+                        </p>
+                        <div>
+                            <button id="confirmBtn" value="default" type="submit" onclick="add()">ToDo Eintragen</button>
+                            <button value="cancel" formmethod="dialog">Cancel</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </dialog>
+            <br><br>
+            <label for="hide-checkbox">Hide</label><input type="checkbox" id="hide-checkbox">
+        </div>
+    </div>
+    <div id="main" class="main">
+        <div id="outputDiv">
+        </div>
+    </div>
+    <div class="footer">
+        <p>@Copyright Sebastian</p>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
